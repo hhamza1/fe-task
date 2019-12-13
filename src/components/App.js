@@ -1,11 +1,12 @@
 import React from 'react';
+import Movie from './Movie';
 import './sass/App.scss';
 
 function App() {
   return (
-    <h1>
-      Hello World
-    </h1>
+    <div>
+      <Movie />
+    </div>
   );
 }
 
