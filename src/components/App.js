@@ -1,11 +1,11 @@
 import React from 'react';
-import Movie from './Movie';
+import MovieList from './MovieList';
 import './sass/App.scss';
 
 function App() {
   return (
     <div>
-      <Movie />
+      <MovieList />
     </div>
   );
 }
