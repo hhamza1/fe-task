@@ -3,18 +3,26 @@ import './sass/modules/Movie.scss';
 
 
 
-const Movie = () => {
+const Movie = (props) => {
+    const {movie} = props;
+    const durationConverter = duration => {
+        duration = duration.match(/[0-9]+/);
+        let hours = Math.floor(duration / 60);
+        let minutes = duration % 60;
+        return `${hours}h ${minutes}min`;
+    }
+
     return(
         <div className="movie-card">
             <img
                 className="movie-card__img"
-                src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY500_CR0,0,337,500_AL_.jpg" 
-                alt="movie poster" />
+                src={movie.posterurl} 
+                alt={movie.originalTitle} />
             <div className="movie-card__details">
-                <h1 className="movie-card__title">The Dark Knight</h1>
-                <p className="movie-card__info">2019 · Crime, Drama, Thriller · 2h 2min</p>
+                <h1 className="movie-card__title">{movie.originalTitle}</h1>
+                <p className="movie-card__info">{`${movie.year} · ${movie.genres.map(genre => ` ${genre} `)} · ${durationConverter(movie.duration)}`}</p>
                 <p className="movie-card__score">
-                    <span className="movie-card__score--scored">8.7</span>/10
+                    <span className="movie-card__score--scored">{movie.imdbRating}</span>/10
                 </p>
                 <div className="movie-card__scorebar"></div>
                 <button className="movie-card__btn">movie details</button>
