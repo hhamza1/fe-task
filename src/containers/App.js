@@ -43,7 +43,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onMovieList : () => dispatch(getMovieList()),
-        onGetMovieId: (event) => dispatch(getMovieId(event)),
+        onGetMovieId: () => dispatch(getMovieId()),
     }
 }
 

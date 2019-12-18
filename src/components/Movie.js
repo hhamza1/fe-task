@@ -27,7 +27,7 @@ class Movie extends Component {
                     <ScoreBarBg >
                         <ScoreBar width={movie.imdbRating} />
                     </ScoreBarBg>
-                    <Link className="link" to={`/movie?id=${movie.id}`}><Button id={movie.id} onClick={getMovieId}>movie details</Button></Link>
+                    <Link className="link" to={`/movie/${movie.id}`}><Button id={movie.id} onClick={getMovieId}>movie details</Button></Link>
                     
                 </div>
             </div>

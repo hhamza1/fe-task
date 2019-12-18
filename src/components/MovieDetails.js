@@ -7,7 +7,7 @@ import './sass/MovieDetails.scss';
 class MovieDetails extends Component{
 
 componentDidMount() {
-    this.props.onGetMovieDetails();
+    /* this.props.onGetMovieDetails(this.props.id); */
 }
 
 displayCast = (array) => {
@@ -15,8 +15,9 @@ displayCast = (array) => {
 }
 
 render() {
-    const {isAdded, onToggleWishList, movieDetails} = this.props;
-        return (
+    const {isAdded, onToggleWishList, id,/*  movieDetails */} = this.props;
+         const movieDetails = require(`../data/${id}.json`);
+            return (
             <div className="movie-details">
                 <div className="movie-details__poster">
                     <img 
@@ -56,9 +57,10 @@ render() {
 
 const mapStateToProps = (state) => {
     return {
-        isAdded: state.getMovieId.isAdded,
+        isAdded: state.toggleWishlist.isAdded,
         watchList: state.toggleWishlist.watchList,
-        movieDetails: state.getMovieDetails.movieDetails
+        /* movieDetails: state.getMovieDetails.movieDetails, */
+        id: state.getMovieId.id
     }
 }
 
