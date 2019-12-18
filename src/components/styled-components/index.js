@@ -7,14 +7,12 @@ export const ScoreBar = styled.div`
     border-radius: 3px;
     height: 6px;
     width: ${props => props.width * 10}%;
-    z-index: 2;
 `;
 
 
 export const ScoreBarBg = styled(ScoreBar)`
     width: 100%;
     background-color: #ebebeb;
-    z-index: 1;
 `;
 
 export const Button = styled.div`
@@ -24,15 +22,32 @@ export const Button = styled.div`
     box-shadow: 0px 4px 12px 0 rgba(255, 96, 0, 0.5);
     color: #fff;
     font-weight: 600;
-    letter-spacing: 2.1px;
+    letter-spacing: 2px;
+    -moz-letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
     transition: all 0.5s ease-in-out;
-    margin-top: 47px;
+    margin-top: 20px;
+
 
     &:active {
         box-shadow: none; 
+    }
+`;
+
+
+export const WatchListButton = styled(Button)`
+        &::after {
+            content: '+ add to watchlist'
+        }
+        & .remove {
+            background: #f24545;
+        }
+
+        & .remove::after{
+            content: '- remove from watchlist'
+        }
     }
 `;

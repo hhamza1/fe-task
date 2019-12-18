@@ -1,0 +1,4 @@
+export const TOGGLE_WISHLIST = 'TOGGLE_WISHLIST';
+export const GET_MOVIELIST = 'GET_MOVIELIST';
+export const GET_MOVIE_DETAILS = 'GET_MOVIE_DETAILS';
+export const GET_MOVIE_ID = 'GET_MOVIE_ID';
